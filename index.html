@@ -19,6 +19,7 @@
           <button type="button" class="btn btn-outline-success btn-block">Let's Add a Task</button>
           <hr>
           <h5 class = "text-center" ng-show = "todoArray.length > 0">Your Current Tasks</h5>
+          <h5 class = "text-center" ng-show = "todoArray.length < 1">Please get assigned. You have no tasks.</h5>
           <hr>
           <div class="row">
             <div class="col-md-4" ng-repeat="todo in todoArray">
