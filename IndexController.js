@@ -10,23 +10,37 @@ app.controller("IndexController", ($scope) => {
         },
         {
             task: "just",
-            date: new Date(),
+            date: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
             desc: "like this  to describe"
         },
         {
             task: "by",
-            date: new Date(),
+            date: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
             desc: "maroon 5"
         },
         {
             task: "by",
-            date: new Date(),
+            date: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
             desc: "maroon 5"
         },
         {
             task: "by",
-            date: new Date(),
+            date: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
             desc: "maroon 5"
         }
     ];
+    $scope.remove = (todoIndex) => {
+        $scope.todoArray.splice(todoIndex, 1);
+    }
+    $scope.edit = (todoIndex) => {
+        $scope.todoItem = $scope.todoArray[todoIndex];
+    }
+    $scope.saveEdit = (index, todoItemTask, todoItemDesc) => {
+        $scope.todoArray.splice(index, 1);
+        $scope.todoArray[index] = {
+            task: todoItemTask,
+            desc: todoItemDesc,
+            date: moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
+        }
+    }
 });
