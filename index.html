@@ -12,17 +12,20 @@
     <script src = "./IndexController.js"></script>
   </head>
   <body>
-      <div class = " container " ng-app = "todo">
-        <div class="jumbotron" ng-controller = "IndexController">
-          <h2 class = "text-center" ng-bind = "appTitle"></h2><br><br>
+      <div class = " container " ng-app = "todo" ng-controller = "IndexController">
+        <br>
+        <h2 class = "text-center" ng-bind = "appTitle"></h2><br>
+        <div class="jumbotron" >
+          <button type="button" class="btn btn-outline-success btn-block">Let's Add a Task</button>
+          <br><br>
           <div ng-repeat = "todo in todoArray">
             <div class="list-group">
               <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1" ng-bind="todo"></h5>
-                  <small>3 days ago</small>
+                  <h5 class="mb-1" ng-bind="todo.task"></h5>
+                  <small ng-bind = "todo.date"></small>
                 </div>
-                <small>Donec id elit non mi porta.</small>
+                <small ng-bind = "todo.desc"></small>
               </a>
             </div>
           </div>
