@@ -17,6 +17,16 @@ app.controller("IndexController",($scope) => {
       task:"by",
       date:new Date(),
       desc:"maroon 5"
+    },
+    {
+      task:"by",
+      date:new Date(),
+      desc:"maroon 5"
+    },
+    {
+      task:"by",
+      date:new Date(),
+      desc:"maroon 5"
     }
   ];
 });

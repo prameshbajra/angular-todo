@@ -17,16 +17,23 @@
         <h2 class = "text-center" ng-bind = "appTitle"></h2><br>
         <div class="jumbotron" >
           <button type="button" class="btn btn-outline-success btn-block">Let's Add a Task</button>
-          <br><br>
-          <div ng-repeat = "todo in todoArray">
-            <div class="list-group">
-              <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                  <h5 class="mb-1" ng-bind="todo.task"></h5>
-                  <small ng-bind = "todo.date"></small>
+          <hr>
+          <h5 class = "text-center" ng-show = "todoArray.length > 0">Your Current Tasks</h5>
+          <hr>
+          <div class="row">
+            <div class="col-md-4" ng-repeat="todo in todoArray">
+              <div class="card" style="width: 18rem;background:#F5F5F5;">
+                <div class="card-body">
+                  <u>
+                    <h6 class="card-title" ng-bind="todo.task | uppercase"></h6>
+                  </u>
+                  <p class="card-subtitle mb-2 " ng-bind = "todo.desc"></p>
+                  <small class="card-text text-muted" ng-bind="todo.date"></small><br><br>
+                  <a href="#" class="btn btn-sm btn-outline-dark">Edit</a>
+                  <a href="#" class="btn btn-sm btn-outline-danger">Remove</a>
                 </div>
-                <small ng-bind = "todo.desc"></small>
-              </a>
+              </div>
+              <br>
             </div>
           </div>
         </div>
