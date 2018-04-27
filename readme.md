@@ -2,6 +2,6 @@
 
 This application only uses CDNs. 
 
-    -   No `npm install` s
+    - No `npm install` s
 
-    -   No required extra dependancies.
+    - No required extra dependancies.
