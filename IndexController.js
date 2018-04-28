@@ -2,33 +2,22 @@ const app = angular.module("todo", []);
 
 app.controller("IndexController", ($scope) => {
     $scope.appTitle = "To Do Application";
-    $scope.todoArray = [
-        {
-            task: "Something",
-            date: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
-            desc: "Something to describe"
-        },
-        {
-            task: "just",
-            date: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
-            desc: "like this  to describe"
-        },
-        {
-            task: "by",
-            date: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
-            desc: "maroon 5"
-        },
-        {
-            task: "by",
-            date: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
-            desc: "maroon 5"
-        },
-        {
-            task: "by",
-            date: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
-            desc: "maroon 5"
+    $scope.todoArray = [];
+    $scope.addTask = false;
+    $scope.addItem = (item) => {
+        $scope.todoArray.push(item);
+    }
+    $scope.toggleAddTask = () => {
+        $scope.addTask = !$scope.addTask;
+    }
+    $scope.addTask = (task, desc) => {
+        const item = {
+            task,
+            desc,
+            date: moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
         }
-    ];
+        $scope.todoArray = $scope.todoArray.push(item);
+    }
     $scope.remove = (todoIndex) => {
         $scope.todoArray.splice(todoIndex, 1);
     }
