@@ -3,12 +3,12 @@ const app = angular.module("todo", ["ngRoute"]);
 app.controller("IndexController", ($scope) => {
     $scope.appTitle = "To Do Application";
     $scope.todoArray = [];
-    $scope.addTask = false;
+    $scope.addTaskToggle = false;
     $scope.addItem = (item) => {
         $scope.todoArray.push(item);
     }
     $scope.toggleAddTask = () => {
-        $scope.addTask = !$scope.addTask;
+        $scope.addTaskToggle = !$scope.addTaskToggle;
     }
     $scope.addTask = (task, desc) => {
         const item = {
@@ -16,7 +16,7 @@ app.controller("IndexController", ($scope) => {
             desc,
             date: moment().format("dddd, MMMM Do YYYY, h:mm:ss a")
         }
-        $scope.todoArray = $scope.todoArray.push(item);
+        $scope.todoArray = [...$scope.todoArray, item];
     }
     $scope.remove = (todoIndex) => {
         $scope.todoArray.splice(todoIndex, 1);
