@@ -1,0 +1,22 @@
+{
+  "name": "angular-todo",
+  "version": "1.0.0",
+  "description": "Simple angular todo app ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prameshbajra/angular-todo.git"
+  },
+  "author": "Pramesh Bajracharya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prameshbajra/angular-todo/issues"
+  },
+  "homepage": "https://github.com/prameshbajra/angular-todo#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

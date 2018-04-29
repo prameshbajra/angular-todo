@@ -1,4 +1,4 @@
-const app = angular.module("todo", []);
+const app = angular.module("todo", ["ngRoute"]);
 
 app.controller("IndexController", ($scope) => {
     $scope.appTitle = "To Do Application";
