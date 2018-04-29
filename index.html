@@ -27,18 +27,20 @@
             var modal = $(this)
             modal.find('.modal-title').text('New message to ' + recipient)
             modal.find('.modal-body input').val(recipient)
-        })
+        });
+        
     </script>
 </head>
+
 <body>
     <div class=" container " ng-app="todo" ng-controller="IndexController">
         <br>
         <h2 class="text-center" ng-bind="appTitle"></h2>
         <br>
         <div class="jumbotron">
-            <a href = "#!/addTask" ng-click = "toggleAddTask()" class="btn btn-outline-success btn-block">Let's Add a Task</a>
+            <a href="#!/addTask" ng-click="toggleAddTask()" class="btn btn-outline-success btn-block">Let's Add a Task</a>
             <br>
-            <div ng-show = "addTask">
+            <div ng-show="addTask">
                 <ng-view></ng-view>
             </div>
             <hr>
@@ -81,7 +83,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancel</button>
-                                            <button type="button" class="btn btn-outline-success" data-dismiss="modal" ng-click="saveEdit($index,task,desc)">Save</button>
+                                            <button type="button" id="save-button" class="btn btn-outline-success" data-dismiss="modal" ng-click="saveEdit($index,task,desc)">Save</button>
                                         </div>
                                     </div>
                                 </div>
