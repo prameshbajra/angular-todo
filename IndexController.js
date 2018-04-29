@@ -25,6 +25,7 @@ app.controller("IndexController", ($scope) => {
         $scope.todoItem = $scope.todoArray[todoIndex];
     }
     $scope.saveEdit = (index, todoItemTask, todoItemDesc) => {
+        $(".modal-backdrop").hide();
         $scope.todoArray.splice(index, 1);
         $scope.todoArray[index] = {
             task: todoItemTask,
